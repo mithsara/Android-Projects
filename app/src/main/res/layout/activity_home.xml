@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/HomeCons"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/HomeFrameNetwork"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:background="@drawable/radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.053">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/HomeConsNetwork"
+                android:layout_width="362dp"
+                android:layout_height="152dp"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/textViewHomeNetwork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/network"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.503" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/HomeFrameRaid"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:background="@drawable/radiusbutton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.347">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/HomeConsRaid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/raid"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.503" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/HomeFrameDownload"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:background="@drawable/radiustab"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.64">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/HomeConsDownload"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/download"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.503" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/HomeFrameNumber"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
+            android:background="@drawable/radiusextra"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.934">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/HomeConsNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_system"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <Space
+            android:id="@+id/homesp1"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:clickable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.255" />
+
+        <Space
+            android:id="@+id/homesp2"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:clickable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.495" />
+
+        <Space
+            android:id="@+id/homesp3"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:clickable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.734" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
