@@ -11,8 +11,14 @@
     <string name="classless_subnetting">Classless Subnetting</string>
     <string name="eui_64">EUI-64</string>
     <string name="vlsm">VLSM</string>
-    <!--networksubnet-->
 
+    <!--networksubnet-->
+    <!--numbersystem-->
+    <string name="textViewConverter">Number System Converter</string>
+    <string name="enterNumber">Enter a Number</string>
+    <string name="submitbtn">Convert</string>
+
+    <!--numbersystem-->
 
 
 </resources>
