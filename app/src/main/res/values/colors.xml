@@ -6,6 +6,9 @@
     <color name="tab">#ECCCCC</color>
     <color name="extra">#ffdb94</color>
     <color name="apptitle">#ffffff</color>
+    <color name="appBar">#0496FF</color>
+    <color name="appColor">#027BCE</color>
+    <color name="Button">#B5BAD0</color>
 </resources>
 
 
