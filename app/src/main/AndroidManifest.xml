@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DTCalSavedConnectionTypesActivity"></activity>
+        <activity android:name=".DTCalSavedConnectionActivity" />
+        <activity android:name=".DTCalNewConnectionActivity" />
+        <activity android:name=".DTCalActivity" />
+        <activity android:name=".DTCalHomeActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
