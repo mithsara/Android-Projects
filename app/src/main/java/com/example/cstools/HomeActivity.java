@@ -20,9 +20,21 @@ public class HomeActivity extends AppCompatActivity {
                 openNetworkHome();
             }
         });
+
+        FrameLayout numberFrame = (FrameLayout) findViewById(R.id.HomeFrameNumber);
+        numberFrame.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openNumberSystemHome();
+            }
+        });
     }
+
     public void openNetworkHome(){
         Intent intent = new Intent(this,networkHomeActivity.class);
+        startActivity(intent);
+    }
+    private void openNumberSystemHome() {
+        Intent intent = new Intent(this,numberSystemHomeActivity.class);
         startActivity(intent);
     }
 }
