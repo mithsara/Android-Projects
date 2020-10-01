@@ -10,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".numberSystemConverterActivity"></activity>
-        <activity android:name=".numberSystemHomeActivity" />
+        <activity android:name=".numberSystemHomeActivity"></activity>
+        <activity android:name=".DTCalSavedConnectionTypesActivity"></activity>
+        <activity android:name=".DTCalSavedConnectionActivity" />
+        <activity android:name=".DTCalNewConnectionActivity" />
+        <activity android:name=".DTCalActivity" />
+        <activity android:name=".DTCalHomeActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -18,7 +18,37 @@
     <string name="enterNumber">Enter a Number</string>
     <string name="submitbtn">Convert</string>
 
-    <!--numbersystem-->
 
+    <!--numbersystem-->
+=======
+    <!--DTCal-->
+    <string name="DTCal_Home_Name">Download Time \nCalculator</string>
+    <string name="DTCal_FileSize">File Size</string>
+    <string name="DTCal_Use">Use:</string>
+    <string name="DTCal_Saved_Connection">Saved Connection and Speed</string>
+    <string name="DTCal_New_Connection">New Connection and \n Speed</string>
+    <string name="DTCal_Connection_Type">ConnectionType</string>
+    <string name="DTCal_Connection_Speed">Download Speed</string>
+    <string name="DTCal_Cancel">Cancel</string>
+    <string name="DTCal_Calculate">Calculate</string>
+    <string name="circle_background">backfroudcirlceimg</string>
+    <string name="DTCal_CheckBoxCondition">Save my Connection type and speed for further\n calculations.</string>
+    <string name="DTCal_DownloadTime">Your file\n will download\n in:</string>
+    <string name="DTCal_Resultformat">(dd:hh:mm:ss)</string>
+    <string name="DTCal_MyConnections">My Connection Types And \nSpeeds</string>
+    <string-array name="File_sizes_array">
+        <item>KB</item>
+        <item>MB</item>
+        <item>GB</item>
+    </string-array>
+    <string-array name="Connection_Types_array">
+        <item>Modem</item>
+        <item>ADSL</item>
+        <item>LAN</item>
+        <item>Turbo 3G</item>
+        <item>4G</item>
+    </string-array>
+
+    <!--DTCal-->
 
 </resources>
