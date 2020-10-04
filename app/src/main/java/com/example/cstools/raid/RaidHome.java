@@ -126,6 +126,15 @@ public class RaidHome extends AppCompatActivity {
             }
         });
 
+        btnHistory = (Button)findViewById(R.id.btnHistory);
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                Intent i = new Intent(RaidHome.this, AllRaid.class);
+                startActivity(i);
+            }
+        });
+
         btnCalculate = (Button)findViewById(R.id.btnCalculate);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
@@ -394,10 +403,9 @@ public class RaidHome extends AppCompatActivity {
         }
         else {
             type = "TB";
-        }
-
+        }String st = String.valueOf(rt);
         RaidHistory upload = new RaidHistory(
-                rt,
+                st,
                 drCap.getText().toString() + type,
                 drCos.getText().toString(),
                 drPR.getText().toString(),

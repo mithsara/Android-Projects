@@ -2,13 +2,17 @@ package com.example.cstools.model;
 
 public class RaidHistory {
     private String key;
-    private int raidType;
+    private String raidType;
     private String driveCapacity;
     private String driveCost;
     private String drivesPerRaid;
     private String raidGroup;
 
-    public RaidHistory(int raidType, String driveCapacity, String driveCost, String drivesPerRaid, String raidGroup) {
+
+    public RaidHistory() {
+    }
+
+    public RaidHistory(String raidType, String driveCapacity, String driveCost, String drivesPerRaid, String raidGroup) {
         this.raidType = raidType;
         this.driveCapacity = driveCapacity;
         this.driveCost = driveCost;
@@ -24,11 +28,11 @@ public class RaidHistory {
         this.key = key;
     }
 
-    public int getRaidType() {
+    public String getRaidType() {
         return raidType;
     }
 
-    public void setRaidType(int raidType) {
+    public void setRaidType(String raidType) {
         this.raidType = raidType;
     }
 
