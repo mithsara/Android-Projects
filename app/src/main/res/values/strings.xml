@@ -17,10 +17,16 @@
     <string name="textViewConverter">Number System Converter</string>
     <string name="enterNumber">Enter a Number</string>
     <string name="submitbtn">Convert</string>
+    <string name="selectType">Select a Type</string>
+    <string name="numberConverter">"Number Converter "</string>
+    <string name="binary">Binary</string>
+    <string name="decimal">Decimal</string>
+    <string name="octal">Octal</string>
+    <string name="hexadecimal">Hexa Decimal</string>
 
 
     <!--numbersystem-->
-    =======
+
     <!--DTCal-->
     <string name="DTCal_Home_Name">Download Time \nCalculator</string>
     <string name="DTCal_FileSize">File Size</string>
@@ -36,12 +42,7 @@
     <string name="DTCal_DownloadTime">Your file\n will download\n in:</string>
     <string name="DTCal_Resultformat">(dd:hh:mm:ss)</string>
     <string name="DTCal_MyConnections">My Connection Types And \nSpeeds</string>
-    <string name="selectType">Select a Type</string>
-    <string name="numberConverter">"Number Converter "</string>
-    <string name="binary">Binary</string>
-    <string name="decimal">Decimal</string>
-    <string name="octal">Octal</string>
-    <string name="hexadecimal">Hexa Decimal</string>
+
     <string-array name="File_sizes_array">
         <item>KB</item>
         <item>MB</item>
@@ -54,7 +55,11 @@
         <item>Turbo 3G</item>
         <item>4G</item>
     </string-array>
-
+    <string-array name="Speed_array">
+        <item>Kbps</item>
+        <item>Mbps</item>
+        <item>Gbps</item>
+    </string-array>
     <!--DTCal-->
 
 </resources>
