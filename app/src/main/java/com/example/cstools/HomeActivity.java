@@ -24,9 +24,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         downloadFrame.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+            public void onClick(View v) {
                 openDTCal();
-
+            }
+            });
         networkFrame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openNetworkHome();
@@ -50,6 +51,11 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    public void openDTCal() {
+        Intent intent = new Intent(this, DTCalHomeActivity.class);
+        startActivity(intent);
+    }
+
     public void openNetworkHome() {
         Intent intent = new Intent(this, networkHomeActivity.class);
         startActivity(intent);
@@ -65,8 +71,5 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openDTCal(){
-        Intent intent = new Intent(this,DTCalHomeActivity.class);
-        startActivity(intent);
-    }
+
 }

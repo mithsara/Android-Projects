@@ -9,12 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".DTCalResultActivity" />
-=======
 
-        <activity android:name=".DTCalResultActivity"></activity>
->>>>>>> 744f93f65e5303baf6dc76c01cbe17c90985fa13
+        <activity android:name=".DTCalResultActivity" />
         <activity android:name=".DTCalSavedConnectionTypesActivity" />
         <activity android:name=".numberSystemConverterActivity"></activity>
         <activity android:name=".numberSystemHomeActivity"></activity>
