@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 public class HomeActivity extends AppCompatActivity {
+
+    Button raidButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +23,22 @@ public class HomeActivity extends AppCompatActivity {
                 openNetworkHome();
             }
         });
+
+        FrameLayout raidFrame = (FrameLayout) findViewById(R.id.HomeFrameRaid);
+        raidFrame.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                openRaidHome();
+            }
+        });
     }
     public void openNetworkHome(){
         Intent intent = new Intent(this,networkHomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void openRaidHome(){
+        Intent intent = new Intent(this,raid_home.class);
         startActivity(intent);
     }
 }
