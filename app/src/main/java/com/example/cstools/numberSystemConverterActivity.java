@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-////import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static android.text.InputType.TYPE_CLASS_NUMBER;
 import static android.text.InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS;
@@ -29,9 +29,10 @@ public class numberSystemConverterActivity extends AppCompatActivity {
     TextView answertxt4;
     Spinner spinner;
     EditText number;
-
-
     int spinPosition;
+
+    DatabaseReference numberReference;
+    Number number1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +44,10 @@ public class numberSystemConverterActivity extends AppCompatActivity {
         answertxt2 = (TextView)findViewById(R.id.answertxt2);
         answertxt3 = (TextView)findViewById(R.id.answertxt3);
         answertxt4 = (TextView)findViewById(R.id.answertxt4);
-        number = (EditText) findViewById(R.id.enterNumberEditText);
+        number = (EditText)findViewById(R.id.enterNumberEditText);
         spinPosition = 0;
+        number1 = new Number();
+        numberReference= FirebaseDatabase.getInstance().getReference().child("Number");
 
 
         String[] numberType = {"Decimal","Binary","Octal","Hexa Decimal"};
@@ -78,6 +81,8 @@ public class numberSystemConverterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 calculation();
+                number1.setNumber(number.getText().toString().trim());
+                Toast.makeText(numberSystemConverterActivity.this,"number inserted successfully",Toast.LENGTH_LONG).show();
             }
         });
 

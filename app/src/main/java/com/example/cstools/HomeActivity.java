@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
 
         FrameLayout networkFrame = (FrameLayout) findViewById(R.id.HomeFrameNetwork);
 
-        FrameLayout downloadFrame = (FrameLayout) findViewById(R.id.HomeFrameDownload);
+        /*FrameLayout downloadFrame = (FrameLayout) findViewById(R.id.HomeFrameDownload);
         networkFrame.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 openNetworkHome();
@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         downloadFrame.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 openDTCal();
-
+        */
         networkFrame.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openNetworkHome();
@@ -65,8 +65,5 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openDTCal(){
-        Intent intent = new Intent(this,DTCalNewConnectionActivity.class);
-        startActivity(intent);
-    }
+
 }
