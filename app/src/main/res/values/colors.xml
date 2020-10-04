@@ -12,7 +12,12 @@
     <color name="appBar">#0496FF</color>
     <color name="appColor">#027BCE</color>
     <color name="Button">#B5BAD0</color>
+
+    <color name="colorOrange">#ebad13</color>
+    <color name="frameAnswer">#9c9a92</color>
+
     <color name="blue">#027BCE</color>
+
 
 </resources>
 

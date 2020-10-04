@@ -133,7 +133,7 @@
                         android:layout_height="100dp"
                         android:contentDescription="backfroudcirlceimg"
                         android:padding="10dp"
-                        android:src="@drawable/newcon" />
+                        app:srcCompat="@drawable/save" />
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "374727060306",
+    "firebase_url": "https://cs-tools-e8dbe.firebaseio.com",
+    "project_id": "cs-tools-e8dbe",
+    "storage_bucket": "cs-tools-e8dbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374727060306:android:4a5919ab10bfbc4b25688b",
+        "android_client_info": {
+          "package_name": "com.example.cstools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374727060306-erq3nhcr1dc4q65613i1ahvkfcn62fjr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cstools",
+            "certificate_hash": "af1970897223c7179d28734b13037ebad27e245b"
+          }
+        },
+        {
+          "client_id": "374727060306-pu592c9hek44q0d92e3nh0j3c6tuchqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ5o08E3NIvc9wLW3Pry2YnpRVmiKWBe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374727060306-pu592c9hek44q0d92e3nh0j3c6tuchqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

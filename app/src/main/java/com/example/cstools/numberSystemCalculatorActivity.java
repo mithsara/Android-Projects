@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DTCalActivity extends AppCompatActivity {
+public class numberSystemCalculatorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_d_t_cal);
+        setContentView(R.layout.activity_number_system_calculator);
     }
 }

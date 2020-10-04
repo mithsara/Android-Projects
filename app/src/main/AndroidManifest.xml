@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cstools">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".numberSystemConverterActivity"></activity>
-        <activity android:name=".numberSystemHomeActivity"></activity>
-        <activity android:name=".DTCalSavedConnectionTypesActivity"></activity>
-        <activity android:name=".DTCalSavedConnectionActivity" />
-        <activity android:name=".DTCalNewConnectionActivity" />
-        <activity android:name=".DTCalActivity" />
-        <activity android:name=".DTCalHomeActivity" />
+
+        <activity android:name=".ClasslessSubnetActivity"></activity>
+
+
+        <activity android:name=".numberSystemCalculatorActivity"></activity>
+        <activity android:name=".numberSystemConverterActivity" />
+        <activity android:name=".numberSystemHomeActivity" />
+        <activity android:name=".DTCalResultActivity"></activity>
+
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +27,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".networkHomeActivity" />
+
         <activity android:name=".raid.RaidHome" />
         <activity android:name=".raid.RaidResults"></activity>
-
+        <activity android:name=".eui64_HomeActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
