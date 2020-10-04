@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openDTCal(){
-        Intent intent = new Intent(this,DTCalNewConnectionActivity.class);
+        Intent intent = new Intent(this,DTCalHomeActivity.class);
         startActivity(intent);
     }
 }

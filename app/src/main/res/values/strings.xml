@@ -17,10 +17,10 @@
     <string name="DTCal_Home_Name">Download Time \nCalculator</string>
     <string name="DTCal_FileSize">File Size</string>
     <string name="DTCal_Use">Use:</string>
-    <string name="DTCal_Saved_Connection">Saved Connection and Speed</string>
-    <string name="DTCal_New_Connection">New Connection and \n Speed</string>
-    <string name="DTCal_Connection_Type">ConnectionType</string>
-    <string name="DTCal_Connection_Speed">Download Speed</string>
+    <string name="DTCal_Saved_Connection">View\nSaved Connections</string>
+    <string name="DTCal_New_Connection">Use\nCalculator</string>
+    <string name="DTCal_Connection_Type">Connection\nType</string>
+    <string name="DTCal_Connection_Speed">Download\nSpeed</string>
     <string name="DTCal_Cancel">Cancel</string>
     <string name="DTCal_Calculate">Calculate</string>
     <string name="circle_background">backfroudcirlceimg</string>
