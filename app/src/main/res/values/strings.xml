@@ -36,6 +36,12 @@
     <string name="DTCal_DownloadTime">Your file\n will download\n in:</string>
     <string name="DTCal_Resultformat">(dd:hh:mm:ss)</string>
     <string name="DTCal_MyConnections">My Connection Types And \nSpeeds</string>
+    <string name="selectType">Select a Type</string>
+    <string name="numberConverter">"Number Converter "</string>
+    <string name="binary">Binary</string>
+    <string name="decimal">Decimal</string>
+    <string name="octal">Octal</string>
+    <string name="hexadecimal">Hexa Decimal</string>
     <string-array name="File_sizes_array">
         <item>KB</item>
         <item>MB</item>
