@@ -1,7 +1,5 @@
 package com.example.cstools;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,12 +12,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cstools.model.Number;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static android.text.InputType.TYPE_CLASS_NUMBER;
 import static android.text.InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS;
-import static android.text.InputType.TYPE_CLASS_TEXT;
 
 public class numberSystemConverterActivity extends AppCompatActivity {
     Button submitbtn;
@@ -30,6 +31,9 @@ public class numberSystemConverterActivity extends AppCompatActivity {
     Spinner spinner;
     EditText number;
     int spinPosition;
+    boolean state = false;
+    ArrayAdapter<String> arrayAdapter;
+    private DatabaseReference mDatabaseRef;
 
     DatabaseReference numberReference;
     Number number1;
@@ -39,7 +43,7 @@ public class numberSystemConverterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_system_converter);
 
-        submitbtn = (Button)findViewById(R.id.submitbtn);
+        submitbtn = (Button) findViewById(R.id.submitbtn);
         answertxt = (TextView)findViewById(R.id.answertxt);
         answertxt2 = (TextView)findViewById(R.id.answertxt2);
         answertxt3 = (TextView)findViewById(R.id.answertxt3);
@@ -53,7 +57,6 @@ public class numberSystemConverterActivity extends AppCompatActivity {
         String[] numberType = {"Decimal","Binary","Octal","Hexa Decimal"};
         spinner = (Spinner) findViewById(R.id.spinner);
 
-        ArrayAdapter<String> arrayAdapter;
 
         arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, numberType);
         spinner.setAdapter(arrayAdapter);
@@ -76,15 +79,21 @@ public class numberSystemConverterActivity extends AppCompatActivity {
 
             }
         });
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("number_system");
 
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                state = false;
                 calculation();
                 number1.setNumber(number.getText().toString().trim());
-                Toast.makeText(numberSystemConverterActivity.this,"number inserted successfully",Toast.LENGTH_LONG).show();
+                if (!state) {
+                    Toast.makeText(numberSystemConverterActivity.this, "number inserted successfully", Toast.LENGTH_LONG).show();
+                    uploadFile();
+                }
             }
         });
+
 
     }
 
@@ -107,33 +116,37 @@ public class numberSystemConverterActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 1:
                     try {
-                        answertxt.setText("Binary : " + Long.parseLong(value, 2));
+                        answertxt.setText("Decimal : " + Long.parseLong(value, 2));
                         answertxt.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 2:
                     try {
-                        answertxt.setText("Octal : " + Long.parseLong(value, 8));
+                        answertxt.setText("Decimal : " + Long.parseLong(value, 8));
                         answertxt.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 3:
                     try {
-                        answertxt.setText("Hexa Decimal : " +  Long.parseLong(value, 16));
+                        answertxt.setText("Decimal : " +  Long.parseLong(value, 16));
                         answertxt.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
 
                     break;
@@ -149,38 +162,42 @@ public class numberSystemConverterActivity extends AppCompatActivity {
             switch (spinPosition) {
                 case 0:
                     try {
-                        answertxt2.setText("" + Long.toBinaryString(Long.valueOf(value)));
+                        answertxt2.setText("Binary : " + Long.toBinaryString(Long.valueOf(value)));
                         answertxt2.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 1:
                     try {
-                        answertxt2.setText(value);
+                        answertxt2.setText("Binary : "+value);
                         answertxt2.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 2:
                     try {
-                        answertxt2.setText("" + Long.toBinaryString(Long.parseLong(value, 8)));
+                        answertxt2.setText("Binary : " + Long.toBinaryString(Long.parseLong(value, 8)));
                         answertxt2.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong 1234");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 3:
                     try {
-                        answertxt2.setText("" + Long.toBinaryString(Long.parseLong(value, 16)));
+                        answertxt2.setText("Binary : " + Long.toBinaryString(Long.parseLong(value, 16)));
                         answertxt2.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
             }
@@ -193,43 +210,47 @@ public class numberSystemConverterActivity extends AppCompatActivity {
             switch (spinPosition) {
                 case 0:
                     try {
-                        answertxt3.setText("" + Long.toOctalString(Long.valueOf(value)));
+                        answertxt3.setText("Octal : " + Long.toOctalString(Long.valueOf(value)));
                         answertxt3.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
 
                     break;
                 case 1:
                     try {
                         long l = Long.parseLong(value, 2);
-                        answertxt3.setText("" + Long.toOctalString(l));
+                        answertxt3.setText("Octal : " + Long.toOctalString(l));
                         answertxt3.setTextSize(20);
 
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 2:
                     try {
-                        answertxt3.setText(value);
+                        answertxt3.setText("Octal : "+value);
                         answertxt3.setTextSize(20);
 
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 3:
                     try {
-                        answertxt3.setText("" + Long.toOctalString(Long.parseLong(value, 16)));
+                        answertxt3.setText("Octal : " + Long.toOctalString(Long.parseLong(value, 16)));
                         answertxt3.setTextSize(20);
 
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
             }
@@ -243,40 +264,44 @@ public class numberSystemConverterActivity extends AppCompatActivity {
             switch (spinPosition) {
                 case 0:
                     try {
-                        answertxt4.setText("" + Long.toHexString(Long.valueOf(value)));
+                        answertxt4.setText("Hexa Decimal : " + Long.toHexString(Long.valueOf(value)));
                         answertxt4.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
 
                     break;
                 case 1:
                     try {
-                        answertxt4.setText("" + Long.toHexString(Long.parseLong(value, 2)));
+                        answertxt4.setText("Hexa Decimal : " + Long.toHexString(Long.parseLong(value, 2)));
                         answertxt4.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
 
                     break;
                 case 2:
                     try {
-                        answertxt4.setText("" + Long.toHexString(Long.parseLong(value, 8)));
+                        answertxt4.setText("Hexa Decimal : " + Long.toHexString(Long.parseLong(value, 8)));
                         answertxt4.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
                 case 3:
                     try {
-                        answertxt4.setText(value);
+                        answertxt4.setText("Hexa Decimal : "+value);
                         answertxt4.setTextSize(20);
                     } catch (Exception e) {
                         number.setError("Something Wrong");
                         requestFocus(number);
+                        state = true;
                     }
                     break;
             }
@@ -288,22 +313,27 @@ public class numberSystemConverterActivity extends AppCompatActivity {
         if (number.getText().toString().trim().isEmpty()) {
             number.setError("Field is empty");
             requestFocus(number);
+            state = true;
             return true;
         } else if (gettingInput.matches(".*[G-Z].*") || gettingInput.matches(".*[g-z].*")) {
             number.setError("Insert Captial Letter for A to F");
             requestFocus(number);
+            state = true;
             return true;
         }else if (spinPosition == 2 && gettingInput.matches(".*[8-9].*")) {
             number.setError("Value must be 0 to 7");
             requestFocus(number);
+            state = true;
             return true;
         }else if (spinPosition == 1 && gettingInput.matches(".*[2-9].*")) {
             number.setError("Value must be 0 or 1");
             requestFocus(number);
+            state = true;
             return true;
         }else if (gettingInput.length() > 15) {
             number.setError("Insertion limited to 6 digit");
             requestFocus(number);
+            state = true;
             return true;
         }
         return false;
@@ -313,6 +343,9 @@ public class numberSystemConverterActivity extends AppCompatActivity {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
+    }
+
+    public void itemSelect(View view) {
     }
 
 
@@ -351,5 +384,31 @@ public class numberSystemConverterActivity extends AppCompatActivity {
         } else {
             number.setInputType(TYPE_TEXT_FLAG_CAP_CHARACTERS);
         }
+    }
+
+    private void uploadFile() {
+        String val = "";
+
+        if(spinPosition == 0){
+            val ="Decimal";
+        }else if(spinPosition == 1){
+            val ="Binary";
+        }else if(spinPosition == 3){
+            val ="Octal";
+        }else if(spinPosition == 4){
+            val ="Hexa Decimal";
+        }
+
+        Number upload = new Number(
+                val,
+                number.getText().toString(),
+                answertxt.getText().toString(),
+                answertxt2.getText().toString(),
+                answertxt3.getText().toString(),
+                answertxt4.getText().toString()
+        );
+        String uploadId = mDatabaseRef.push().getKey();
+        mDatabaseRef.child(uploadId).setValue(upload);
+
     }
 }

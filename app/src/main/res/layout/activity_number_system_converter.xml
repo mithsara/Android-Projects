@@ -55,6 +55,7 @@
             android:layout_marginStart="39dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/selectType"
             app:layout_constraintTop_toTopOf="parent"
