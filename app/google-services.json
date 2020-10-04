@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "321989477210",
+    "firebase_url": "https://cs-tools-63df6.firebaseio.com",
+    "project_id": "cs-tools-63df6",
+    "storage_bucket": "cs-tools-63df6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321989477210:android:202b788b0354aa3383e963",
+        "android_client_info": {
+          "package_name": "com.example.cstools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321989477210-cllvgpr70bfl0je8ijnkss98gl89bsja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX9POe4_VO6XaNVm2C6Puew8s9TLyTkqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321989477210-cllvgpr70bfl0je8ijnkss98gl89bsja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

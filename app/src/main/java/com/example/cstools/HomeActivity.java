@@ -10,35 +10,47 @@ import android.widget.FrameLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button raidButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         FrameLayout networkFrame = (FrameLayout) findViewById(R.id.HomeFrameNetwork);
-        networkFrame.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        networkFrame.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 openNetworkHome();
             }
         });
 
         FrameLayout raidFrame = (FrameLayout) findViewById(R.id.HomeFrameRaid);
-        raidFrame.setOnClickListener(new View.OnClickListener(){
+        raidFrame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openRaidHome();
             }
         });
+
+        FrameLayout numberFrame = (FrameLayout) findViewById(R.id.HomeFrameNumber);
+        numberFrame.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                openNumberSystemHome();
+            }
+        });
     }
-    public void openNetworkHome(){
-        Intent intent = new Intent(this,networkHomeActivity.class);
+
+    public void openNetworkHome() {
+        Intent intent = new Intent(this, networkHomeActivity.class);
         startActivity(intent);
     }
 
-    public void openRaidHome(){
-        Intent intent = new Intent(this,raid_home.class);
+    public void openRaidHome() {
+        Intent intent = new Intent(this, raid_home.class);
+        startActivity(intent);
+    }
+
+    private void openNumberSystemHome() {
+        Intent intent = new Intent(this, numberSystemHomeActivity.class);
         startActivity(intent);
     }
 }
