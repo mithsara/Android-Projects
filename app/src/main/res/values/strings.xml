@@ -56,6 +56,7 @@
     <string name="DTCal_DownloadTime">Your file\n will download\n in:</string>
     <string name="DTCal_Resultformat">(dd:hh:mm:ss)</string>
     <string name="DTCal_MyConnections">My Connection Types And \nSpeeds</string>
+    <string name="history">History</string>
 
 
 
