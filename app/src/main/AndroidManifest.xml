@@ -12,10 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".ClasslessSubnetActivity"></activity>
+
+
         <activity android:name=".numberSystemCalculatorActivity"></activity>
         <activity android:name=".numberSystemConverterActivity" />
         <activity android:name=".numberSystemHomeActivity" />
         <activity android:name=".DTCalResultActivity"></activity>
+
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +27,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".networkHomeActivity" />
+
+        <activity android:name=".eui64_HomeActivity" />
+
+
         <activity android:name=".raid_home" />
         <activity android:name=".raid_results"></activity>
+
 
 
         <meta-data
