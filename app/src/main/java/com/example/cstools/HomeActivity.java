@@ -15,14 +15,25 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         FrameLayout networkFrame = (FrameLayout) findViewById(R.id.HomeFrameNetwork);
+        FrameLayout downloadFrame = (FrameLayout) findViewById(R.id.HomeFrameDownload);
         networkFrame.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 openNetworkHome();
             }
         });
+        downloadFrame.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openDTCal();
+            }
+        });
     }
     public void openNetworkHome(){
         Intent intent = new Intent(this,networkHomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void openDTCal(){
+        Intent intent = new Intent(this,DTCalNewConnectionActivity.class);
         startActivity(intent);
     }
 }

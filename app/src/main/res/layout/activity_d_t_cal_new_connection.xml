@@ -18,9 +18,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="169dp"
-        android:layout_height="38dp"
+        android:id="@+id/etxtFileSize"
+        android:layout_width="149dp"
+        android:layout_height="56dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:inputType="number"
@@ -29,8 +29,8 @@
 
     <Spinner
         android:id="@+id/spinnerFileSize"
-        android:layout_width="72dp"
-        android:layout_height="30dp"
+        android:layout_width="67dp"
+        android:layout_height="54dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,14 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFileSize" />
 
-    <AutoCompleteTextView
-        android:id="@+id/atxtConnectionType"
-        android:layout_width="163dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="64dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtConnectionType"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <TextView
         android:id="@+id/txtConnectionSpeed"
         android:layout_width="wrap_content"
@@ -68,20 +60,20 @@
 
     <MultiAutoCompleteTextView
         android:id="@+id/atxtConnectionSpeed"
-        android:layout_width="102dp"
-        android:layout_height="32dp"
+        android:layout_width="120dp"
+        android:layout_height="51dp"
         android:layout_marginEnd="34dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/txtConnectionSpeed"
-        app:layout_constraintEnd_toStartOf="@+id/spinner2" />
+        app:layout_constraintEnd_toStartOf="@+id/spinnerSpeed" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="48dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="32dp"
+        android:id="@+id/spinnerSpeed"
+        android:layout_width="59dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/atxtConnectionType" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerConType" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -119,4 +111,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnCalculate"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <Spinner
+        android:id="@+id/spinnerConType"
+        android:layout_width="102dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtConnectionType"
+        app:layout_constraintTop_toBottomOf="@+id/etxtFileSize" />
 </androidx.constraintlayout.widget.ConstraintLayout>

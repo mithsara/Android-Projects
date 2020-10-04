@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DTCalSavedConnectionTypesActivity"></activity>
+        <activity android:name=".DTCalResultActivity"></activity>
+        <activity android:name=".DTCalSavedConnectionTypesActivity" />
         <activity android:name=".DTCalSavedConnectionActivity" />
         <activity android:name=".DTCalNewConnectionActivity" />
         <activity android:name=".DTCalActivity" />

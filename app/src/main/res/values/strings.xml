@@ -40,7 +40,11 @@
         <item>Turbo 3G</item>
         <item>4G</item>
     </string-array>
-
+    <string-array name="Speed_array">
+        <item>Kbps</item>
+        <item>Mbps</item>
+        <item>Gbps</item>
+    </string-array>
     <!--DTCal-->
 
 </resources>
