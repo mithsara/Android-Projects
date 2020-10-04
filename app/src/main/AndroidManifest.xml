@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cstools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,19 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".DTCalResultActivity" />
+=======
+
+        <activity android:name=".DTCalResultActivity"></activity>
+>>>>>>> 744f93f65e5303baf6dc76c01cbe17c90985fa13
         <activity android:name=".DTCalSavedConnectionTypesActivity" />
+        <activity android:name=".numberSystemConverterActivity"></activity>
+        <activity android:name=".numberSystemHomeActivity"></activity>
         <activity android:name=".DTCalSavedConnectionActivity" />
         <activity android:name=".DTCalNewConnectionActivity" />
         <activity android:name=".DTCalHomeActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".networkHomeActivity" />
-    </application>
+        <activity android:name=".raid_home" />
+        <activity android:name=".raid_results"></activity>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
 </manifest>
