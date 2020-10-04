@@ -6,6 +6,19 @@
     <color name="tab">#ECCCCC</color>
     <color name="extra">#ffdb94</color>
     <color name="apptitle">#ffffff</color>
+    <color name="colorCalculate">#66a803</color>
+    <color name="colorCancel">#d40404</color>
+    <color name="colorHistory">#04cad4</color>
+    <color name="appBar">#0496FF</color>
+    <color name="appColor">#027BCE</color>
+    <color name="Button">#B5BAD0</color>
+
+    <color name="colorOrange">#ebad13</color>
+    <color name="frameAnswer">#9c9a92</color>
+
+    <color name="blue">#027BCE</color>
+
+
 </resources>
 
 
