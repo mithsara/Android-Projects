@@ -23,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".networkHomeActivity" />
-        <activity android:name=".raid_home" />
-        <activity android:name=".raid_results"></activity>
+        <activity android:name=".raid.RaidHome" />
+        <activity android:name=".raid.RaidResults"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

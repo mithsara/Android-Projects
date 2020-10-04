@@ -1,4 +1,4 @@
-package com.example.cstools;
+package com.example.cstools.raid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,18 +8,29 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.List;
+import com.example.cstools.HomeActivity;
+import com.example.cstools.R;
+import com.example.cstools.model.RaidHistory;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageTask;
 
-public class raid_home extends AppCompatActivity {
+public class RaidHome extends AppCompatActivity {
+
+    private DatabaseReference mDatabaseRef;
+    private StorageTask mUploadTask;
 
     Spinner raidTypeSpinner, raidDriveCapacity;
     ArrayAdapter<String> adapterRaidType;
     ArrayAdapter<String> adapterDriveCapacity;
     EditText drCap, drCos, drPR, rGroup;
+    CheckBox saveBox;
+    boolean checked = false;
     int rt, dc, totUs, costPTB, totCost, dSpaceE, totDrives;
     private Button btnCalculate, btnCancel, btnHistory;
 
@@ -36,10 +47,14 @@ public class raid_home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raid_home);
 
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("raid_details");
+
         drCap = (EditText)findViewById(R.id.driveCap);
         drCos = (EditText) findViewById(R.id.driveCost);
         drPR = (EditText) findViewById(R.id.drivesperRaid);
         rGroup = (EditText) findViewById(R.id.raidGroup);
+
+        saveBox = findViewById(R.id.chkSave);
 
         raidTypeSpinner = findViewById(R.id.spinRaidType);
         raidDriveCapacity = findViewById(R.id.spinDriveCapacity);
@@ -121,7 +136,6 @@ public class raid_home extends AppCompatActivity {
                 int drivesPerRaid = Integer.parseInt(drPR.getText().toString());
                 int raidGroup = Integer.parseInt(rGroup.getText().toString());
 
-                    //  totUs, costPTB, totCost, dSpaceE, totDrives
                 if(dc == 0 && rt == 0){
                     if(drivesPerRaid >= 2) {
                         totUs = drivesPerRaid * raidGroup;
@@ -129,6 +143,9 @@ public class raid_home extends AppCompatActivity {
                         totCost = driveCost * drivesPerRaid * raidGroup;
                         dSpaceE = 10 * 10;
                         totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 2 or more", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if(dc == 0 && rt == 1){
@@ -139,6 +156,10 @@ public class raid_home extends AppCompatActivity {
                         dSpaceE = (10 * 10) / 2;
                         totDrives = drivesPerRaid * raidGroup;
                     }
+                    else
+                    {
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 2 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 0 && rt == 2){
                     if(drivesPerRaid >= 3){
@@ -147,6 +168,9 @@ public class raid_home extends AppCompatActivity {
                         totCost = driveCost * drivesPerRaid * raidGroup;
                         dSpaceE = (10 * 10) / 2;
                         totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 3 or more", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if(dc == 0 && rt == 3){
@@ -157,6 +181,9 @@ public class raid_home extends AppCompatActivity {
                         dSpaceE = 100 - (100 / 3);
                         totDrives = drivesPerRaid * raidGroup;
                     }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 3 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 0 && rt == 4){
                     if(drivesPerRaid >= 3){
@@ -165,6 +192,9 @@ public class raid_home extends AppCompatActivity {
                         totCost = driveCost * raidGroup;
                         dSpaceE = 100 - (100 / 3);
                         totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 3 or more", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if(dc == 0 && rt == 5){
@@ -175,6 +205,9 @@ public class raid_home extends AppCompatActivity {
                         dSpaceE = 100 - (100 / 3);
                         totDrives = drivesPerRaid;
                     }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 4 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 0 && rt == 6){
                     if(drivesPerRaid >= 4){
@@ -183,6 +216,9 @@ public class raid_home extends AppCompatActivity {
                         totCost = driveCost * drivesPerRaid;
                         dSpaceE = (10 * 10) / 2;
                         totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 4 or more", Toast.LENGTH_LONG).show();
                     }
                 }
                 else if(dc == 0 && rt == 7){
@@ -193,6 +229,10 @@ public class raid_home extends AppCompatActivity {
                         dSpaceE = 100 - (100 / 6);
                         totDrives = drivesPerRaid * raidGroup;
                     }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 6 or more and " +
+                                "raid group should be 2 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 0 && rt == 8){
                     if(drivesPerRaid >= 4 && raidGroup >= 2){
@@ -202,32 +242,107 @@ public class raid_home extends AppCompatActivity {
                         dSpaceE = (10 * 10) / 2;
                         totDrives = drivesPerRaid * raidGroup;
                     }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 4 or more and " +
+                                "raid group should be 2 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
-
                 else if(dc == 1 && rt == 0){
-                    totUs = drivesPerRaid * raidGroup;
-                    costPTB = driveCost * raidCapacity;
-                    totCost = driveCost * drivesPerRaid * raidGroup;
-                    dSpaceE = 10 * 10;
-                    totDrives = drivesPerRaid * raidGroup;
+                    if(drivesPerRaid == 2) {
+                        totUs = raidCapacity * drivesPerRaid;
+                        costPTB = driveCost / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = 10 * 10;
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value must be 2", Toast.LENGTH_LONG).show();
+                    }
+                }
+                else if(dc == 1 && rt == 1){
+                    if(drivesPerRaid >= 2){
+                        totUs = raidCapacity * drivesPerRaid;
+                        costPTB = 200 / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = (10 * 10) / 2;
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 2 or more" , Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 1 && rt == 2){
-
+                    if(drivesPerRaid >= 3){
+                        totUs = (150 / 100) * raidCapacity;
+                        costPTB = 200 / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = (10 * 10) / 2;
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 3 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 1 && rt == 3){
-
+                    if(drivesPerRaid >= 3){
+                        totUs = raidCapacity * 2 * raidGroup;
+                        costPTB = (100 + 50) / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = 100 - (100 / 3);
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 6 or more and " +
+                                "raid group should be 2 or more", Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 1 && rt == 4){
-
+                    if(drivesPerRaid >= 3){
+                        totUs = raidCapacity * 2 * raidGroup;
+                        costPTB = (100 + 50) / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = 100 - (100 / 3);
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
+                    else{
+                        Toast.makeText(RaidHome.this, "Drives per raid value should be 3 or more" , Toast.LENGTH_LONG).show();
+                    }
                 }
                 else if(dc == 1 && rt == 5){
-
+                    if(drivesPerRaid >= 4){
+                        totUs = raidCapacity * 2 * raidGroup;
+                        costPTB = 200 / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = 100 - (100 / 3);
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
                 }
                 else if(dc == 1 && rt == 6){
-
+                    if(drivesPerRaid >= 4){
+                        totUs = raidCapacity * raidGroup;
+                        costPTB = 200 / raidCapacity;
+                        totCost = driveCost * drivesPerRaid * raidGroup;
+                        dSpaceE = (10 * 10) / 2;
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
                 }
                 else if(dc == 1 && rt == 7){
-
+                    if(drivesPerRaid >= 6 && raidGroup >= 2){
+                        totUs = raidCapacity * 10;
+                        costPTB =  120 / raidCapacity;
+                        totCost = raidGroup * drivesPerRaid * driveCost;
+                        dSpaceE = 100 - (100 / 6);
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
+                }
+                else if(dc == 1 && rt == 8){
+                    if(drivesPerRaid >= 4 && raidGroup >= 2){
+                        totUs = raidCapacity * drivesPerRaid;
+                        costPTB = 200 / raidCapacity;
+                        totCost = raidGroup * drivesPerRaid * driveCost;
+                        dSpaceE = (10 * 10) / 2;
+                        totDrives = drivesPerRaid * raidGroup;
+                    }
                 }
                 else{
 
@@ -246,10 +361,13 @@ public class raid_home extends AppCompatActivity {
                 resultsBundle.putString("diskSpaceEfficiency" , diskSpaceEfficiency);
                 resultsBundle.putString("totalNumberOfDrives" , totalNumberOfDrives);
 
-                Intent goResultsIntent = new Intent(raid_home.this, raid_results.class);
+                Intent goResultsIntent = new Intent(RaidHome.this, RaidResults.class);
                 goResultsIntent.putExtras(resultsBundle);
                 startActivity(goResultsIntent);
 
+                if(checked){
+                    uploadFile();
+                }
             }
         });
 
@@ -266,5 +384,38 @@ public class raid_home extends AppCompatActivity {
     public void backToHomeActivity(){
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
+    }
+
+    private void uploadFile() {
+        String type;
+        String rType;
+        if(dc == 0){
+            type = "GB";
+        }
+        else {
+            type = "TB";
+        }
+
+        RaidHistory upload = new RaidHistory(
+                rt,
+                drCap.getText().toString() + type,
+                drCos.getText().toString(),
+                drPR.getText().toString(),
+                rGroup.getText().toString()
+        );
+
+        String uploadId = mDatabaseRef.push().getKey();
+        mDatabaseRef.child(uploadId).setValue(upload);
+        Toast.makeText(RaidHome.this, "Upload Success", Toast.LENGTH_SHORT).show();
+        drCap.setText("");
+        drCos.setText("");
+        drPR.setText("");
+        rGroup.setText("");
+    }
+
+    public void itemClicked(android.view.View view) {
+        if(((CheckBox)view).isChecked()){
+            checked = true;
+        }
     }
 }

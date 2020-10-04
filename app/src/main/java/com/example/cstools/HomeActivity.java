@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.example.cstools.raid.RaidHome;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -45,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openRaidHome() {
-        Intent intent = new Intent(this, raid_home.class);
+        Intent intent = new Intent(this, RaidHome.class);
         startActivity(intent);
     }
 
