@@ -12,6 +12,20 @@
     <string name="eui_64">EUI-64</string>
     <string name="vlsm">VLSM</string>
 
+    <string name="enter_device_mac_address">Enter Device MAC Address</string>
+    <string name="oui">OUI</string>
+    <string name="device_indentifier">Device Indentifier</string>
+    <string name="enter">Enter</string>
+    <string name="view">View</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="network_address">Network Address</string>
+    <string name="amount_of_subnets">Amount of Subnets</string>
+    <string name="em" />
+    <string name="x" />
+
+
+
     <!--networksubnet-->
     <!--numbersystem-->
     <string name="textViewConverter">Number System Converter</string>
@@ -44,6 +58,8 @@
     <string name="DTCal_MyConnections">My Connection Types And \nSpeeds</string>
     <string name="history">History</string>
 
+
+
     <string-array name="File_sizes_array">
         <item>KB</item>
         <item>MB</item>
@@ -62,5 +78,6 @@
         <item>Gbps</item>
     </string-array>
     <!--DTCal-->
+
 
 </resources>

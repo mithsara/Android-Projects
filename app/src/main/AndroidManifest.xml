@@ -10,12 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".numberSystemConverterActivity" />
         <activity android:name=".numberSystemHomeActivity" />
         <activity android:name=".NumberDetail" />
         <activity android:name=".NumberList" />
 
         <activity android:name=".DTCalResultActivity"></activity>
+
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +25,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".networkHomeActivity" />
-        <activity android:name=".raid_home" />
-        <activity android:name=".raid_results"></activity>
+
+
+        <activity android:name=".raid.RaidHome" />
+        <activity android:name=".raid.RaidResults"></activity>
+        <activity android:name=".eui64_HomeActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
