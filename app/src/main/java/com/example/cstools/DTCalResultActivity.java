@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class DTCalResultActivity extends AppCompatActivity {
 
     TextView result;
@@ -28,6 +30,8 @@ public class DTCalResultActivity extends AppCompatActivity {
         minutes = extras.getLong("MINUTES");
         seconds = extras.getLong("SECONDS");
 
-
+        timeFormat = String.format("%02d:%02d:%02d:%02d",days,hours,minutes,seconds);
+        result = (TextView) findViewById(R.id.txtDownloadTime);
+        result.setText(timeFormat);
     }
 }

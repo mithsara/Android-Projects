@@ -11,6 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+        <activity android:name=".DTCalResultActivity" />
+        <activity android:name=".DTCalSavedConnectionTypesActivity" />
+        <activity android:name=".DTCalSavedConnectionActivity" />
+        <activity android:name=".DTCalNewConnectionActivity" />
+        <activity android:name=".DTCalHomeActivity" />
+
         <activity android:name=".numberSystemConverterActivity" />
         <activity android:name=".numberSystemHomeActivity" />
 
@@ -19,7 +26,6 @@
         <activity android:name=".NumberDetail" />
         <activity android:name=".NumberList" />
 
-        <activity android:name=".DTCalResultActivity"></activity>
 
         <activity android:name=".HomeActivity">
             <intent-filter>
