@@ -5,12 +5,12 @@
     android:background="@drawable/background_update"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".raid_home">
+    tools:context=".raid.RaidHome">
 
     <Spinner
         android:id="@+id/spinDriveCapacity"
-        android:layout_width="89dp"
-        android:layout_height="40dp"
+        android:layout_width="104dp"
+        android:layout_height="60dp"
         android:fontFamily="@font/nunito_sans"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
-        android:text="Drive Cost: "
+        android:text="Drive Cost: ($)"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,6 +118,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
         android:text="save my Raid Calculations"
+        android:onClick="itemClicked"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,16 +171,16 @@
 
     <Spinner
         android:id="@+id/spinRaidType"
-        android:layout_width="171dp"
-        android:layout_height="34dp"
+        android:layout_width="185dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/nunito_sans"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintVertical_bias="0.324" />
 
     <EditText
         android:id="@+id/driveCost"

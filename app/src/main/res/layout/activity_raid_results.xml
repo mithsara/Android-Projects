@@ -5,21 +5,21 @@
     android:background="@drawable/background_update"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".raid_results">
+    tools:context=".raid.RaidResults">
 
     <TextView
         android:id="@+id/txtCostTB"
-        android:layout_width="73dp"
-        android:layout_height="19dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/nunito_sans"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.428" />
 
     <TextView
         android:id="@+id/calTypeName"
@@ -40,8 +40,8 @@
 
     <TextView
         android:id="@+id/lblUStorage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="28dp"
         android:fontFamily="@font/nunito_sans"
         android:text="Total Usable Storage: "
         android:textColor="#000000"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
-        android:text="Cost per Drive:"
+        android:text="Cost per Drive: ($)"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
-        android:text="Total Cost: "
+        android:text="Total Cost: ($)"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans"
-        android:text="Disk Space Effiency: "
+        android:text="Disk Space Effiency: (%)"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -113,27 +113,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.697" />
 
-    <CheckBox
-        android:id="@+id/chkSaveRaidResults"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans"
-        android:text="save my Raid results"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.816" />
-
     <Button
-        android:id="@+id/btnGoHistory"
+        android:id="@+id/btnGoHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_sans"
         android:background="@drawable/button_blue"
-        android:text="History"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -143,25 +129,25 @@
 
     <TextView
         android:id="@+id/txtTotUS"
-        android:layout_width="73dp"
-        android:layout_height="19dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/nunito_sans"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintVertical_bias="0.331" />
 
     <TextView
         android:id="@+id/txtTotCost"
-        android:layout_width="73dp"
-        android:layout_height="19dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/nunito_sans"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.899"
@@ -171,29 +157,29 @@
 
     <TextView
         android:id="@+id/txtDiskSpaceEffiency"
-        android:layout_width="73dp"
-        android:layout_height="19dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/nunito_sans"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.619" />
 
     <TextView
         android:id="@+id/txtNoDrives"
-        android:layout_width="73dp"
-        android:layout_height="19dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/nunito_sans"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.713" />
 </androidx.constraintlayout.widget.ConstraintLayout>

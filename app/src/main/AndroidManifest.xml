@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.cstools">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -10,13 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <activity android:name=".DTCalResultActivity" />
         <activity android:name=".DTCalSavedConnectionTypesActivity" />
-        <activity android:name=".numberSystemConverterActivity"></activity>
-        <activity android:name=".numberSystemHomeActivity"></activity>
         <activity android:name=".DTCalSavedConnectionActivity" />
         <activity android:name=".DTCalNewConnectionActivity" />
         <activity android:name=".DTCalHomeActivity" />
+
+        <activity android:name=".numberSystemConverterActivity" />
+        <activity android:name=".numberSystemHomeActivity" />
+
+        <activity android:name=".raid.AllRaid" />
+
+        <activity android:name=".NumberDetail" />
+        <activity android:name=".NumberList" />
+
+
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +34,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".networkHomeActivity" />
-        <activity android:name=".raid_home" />
-        <activity android:name=".raid_results"></activity>
+
+
+        <activity android:name=".raid.RaidHome" />
+        <activity android:name=".raid.RaidResults"></activity>
+        <activity android:name=".eui64_HomeActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

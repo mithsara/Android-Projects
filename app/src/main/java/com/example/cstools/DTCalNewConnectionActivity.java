@@ -1,5 +1,4 @@
 package com.example.cstools;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -165,5 +164,4 @@ public class DTCalNewConnectionActivity extends AppCompatActivity {
 
         mDbRef.child(userId).setValue(connection);
     }
-
 }
