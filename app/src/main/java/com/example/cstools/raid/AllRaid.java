@@ -28,7 +28,6 @@ public class AllRaid extends AppCompatActivity implements RaidAdapter.OnItemClic
     private RecyclerView mRecyclerView;
     private RaidAdapter mAdapter;
     private ProgressBar mProgressBar;
-    private FirebaseStorage mStorage;
     private DatabaseReference mDatabaseRef;
     private ValueEventListener mDBListener;
     private List<RaidHistory> mRaidHistory;
@@ -44,18 +43,17 @@ public class AllRaid extends AppCompatActivity implements RaidAdapter.OnItemClic
         mProgressBar = findViewById(R.id.mydataPogress);
         mProgressBar.setVisibility(View.VISIBLE);
         mRaidHistory = new ArrayList<> ();
-        mAdapter = new RaidAdapter (AllRaid.this, mRaidHistory);
+        mAdapter = new RaidAdapter (AllRaid.this, mRaidHistory); //constructor
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(AllRaid.this);
-        mStorage = FirebaseStorage.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("raid_details");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("raid_details"); // get database table
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                mRaidHistory.clear();
-                for (DataSnapshot finance : dataSnapshot.getChildren()) {
-                    RaidHistory upload = finance.getValue(RaidHistory.class);
-                    upload.setKey(finance.getKey());
+                mRaidHistory.clear(); // clear array list
+                for (DataSnapshot raidData : dataSnapshot.getChildren()) { // find data
+                    RaidHistory upload = raidData.getValue(RaidHistory.class); // get & set values
+                    upload.setKey(raidData.getKey()); // recognize the position
                     mRaidHistory.add(upload);
                 }
                 mAdapter.notifyDataSetChanged();
@@ -71,33 +69,15 @@ public class AllRaid extends AppCompatActivity implements RaidAdapter.OnItemClic
 
     @Override
     public void onDeleteItemClick(int position) {
-        RaidHistory selectedItem = mRaidHistory.get(position);
-        final String selectedKey = selectedItem.getKey();
+        RaidHistory selectedItem = mRaidHistory.get(position); // get index
+        final String selectedKey = selectedItem.getKey(); // get selected item's key
 
-        mDatabaseRef.child(selectedKey).removeValue();
+        mDatabaseRef.child(selectedKey).removeValue(); // delete the selected values
         Toast.makeText(AllRaid.this, "Task deleted", Toast.LENGTH_SHORT).show();
     }
+
     protected void onDestroy() {
         super.onDestroy();
         mDatabaseRef.removeEventListener(mDBListener);
     }
-
-    @Override
-    public void onItemClick(int position) {
-
-    }
-
-    @Override
-    public void onShowItemClick(int position) {
-
-        RaidHistory clickedTeacher = mRaidHistory.get(position);
-        final String selectedKey = clickedTeacher.getKey();
-        String[] raidData = {selectedKey,clickedTeacher.getRaidType(),
-                clickedTeacher.getDriveCapacity(),clickedTeacher.getDriveCost(),
-                clickedTeacher.getDrivesPerRaid(),clickedTeacher.getRaidGroup()
-        };
-        //updateActivity(raidData);
-    }
-
-
 }

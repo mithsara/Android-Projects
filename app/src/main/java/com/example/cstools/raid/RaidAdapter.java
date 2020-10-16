@@ -19,34 +19,36 @@ import java.util.List;
 
 
 public  class RaidAdapter extends RecyclerView.Adapter<RaidAdapter.RecyclerViewHolder>{
-    private Context mContext;
+    private Context mContext; // all raid context
     private ImageView raidDelete;
     private List<RaidHistory> raids;
     private OnItemClickListener mListener;
 
-    public RaidAdapter(Context context, List<RaidHistory> uploads) {
+    public RaidAdapter(Context context, List<RaidHistory> uploads) { // constructor
         mContext = context;
         raids = uploads;
     }
 
     @Override
+    public int getItemCount() {
+        return raids.size(); // get count
+    }
+
+    @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // create new raid models and return (adapter)
         View v = LayoutInflater.from(mContext).inflate(R.layout.raid_model, parent, false);
         return new RecyclerViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        RaidHistory raid = raids.get(position);
+    public void onBindViewHolder(RecyclerViewHolder holder, int position) { // set values for the adapter (model)
+        RaidHistory raid = raids.get(position); // get values according to the array index
 
         holder.raidType.setText("Raid Type Name : "+raid.getDriveCapacity());
         holder.raidDriveCost.setText("Drive Cost : "+raid.getDriveCost());
         holder.raidDriveCapacity.setText("Drives Per Raid : "+raid.getDrivesPerRaid());
 
-    }
-    @Override
-    public int getItemCount() {
-        return raids.size();
     }
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
@@ -79,44 +81,21 @@ public  class RaidAdapter extends RecyclerView.Adapter<RaidAdapter.RecyclerViewH
 
         @Override
         public void onClick(View v) {
-            if (mListener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    mListener.onItemClick(position);
-                }
-            }
+
         }
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.setHeaderTitle("Select Action");
-            MenuItem showItem = menu.add( Menu.NONE, 1, 1, "Show");
-            MenuItem deleteItem = menu.add(Menu.NONE, 2, 2, "Delete");
-            showItem.setOnMenuItemClickListener(this);
-            deleteItem.setOnMenuItemClickListener(this);
+
         }
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            if (mListener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-                    switch (item.getItemId()) {
-                        case 1:
-                            mListener.onShowItemClick(position);
-                            return true;
-                        case 2:
-                            mListener.onDeleteItemClick(position);
-                            return true;
-                    }
-                }
-            }
             return false;
         }
     }
     public interface OnItemClickListener {
-        void onItemClick(int position);
-        void onShowItemClick(int position);
         void onDeleteItemClick(int position);
     }
+
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }

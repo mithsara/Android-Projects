@@ -22,8 +22,7 @@ import com.google.firebase.storage.StorageTask;
 
 public class RaidHome extends AppCompatActivity {
 
-    private DatabaseReference mDatabaseRef;
-    private StorageTask mUploadTask;
+    private DatabaseReference mDatabaseRef; //database reference variable
 
     Spinner raidTypeSpinner, raidDriveCapacity;
     ArrayAdapter<String> adapterRaidType;
@@ -47,7 +46,7 @@ public class RaidHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raid_home);
 
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("raid_details");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("raid_details"); // set table path to the variable
 
         drCap = (EditText)findViewById(R.id.driveCap);
         drCos = (EditText) findViewById(R.id.driveCost);
@@ -374,7 +373,7 @@ public class RaidHome extends AppCompatActivity {
                 goResultsIntent.putExtras(resultsBundle);
                 startActivity(goResultsIntent);
 
-                if(checked){
+                if(checked){ //checkbox
                     uploadFile();
                 }
             }
@@ -397,23 +396,23 @@ public class RaidHome extends AppCompatActivity {
 
     private void uploadFile() {
         String type;
-        String rType;
         if(dc == 0){
             type = "GB";
         }
         else {
             type = "TB";
-        }String st = String.valueOf(rt);
-        RaidHistory upload = new RaidHistory(
+        }
+        String st = String.valueOf(rt);
+        RaidHistory upload = new RaidHistory( //model class (constructor)
                 st,
-                drCap.getText().toString() + type,
+                drCap.getText().toString() + type, //pass values
                 drCos.getText().toString(),
                 drPR.getText().toString(),
                 rGroup.getText().toString()
         );
 
-        String uploadId = mDatabaseRef.push().getKey();
-        mDatabaseRef.child(uploadId).setValue(upload);
+        String uploadId = mDatabaseRef.push().getKey(); //create new key for child
+        mDatabaseRef.child(uploadId).setValue(upload); // create new child
         Toast.makeText(RaidHome.this, "Upload Success", Toast.LENGTH_SHORT).show();
         drCap.setText("");
         drCos.setText("");
